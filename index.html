@@ -2,8 +2,9 @@
 <html lang="ru">
 <head>
   <meta charset="UTF-8">
-  <title>Яндекс Аккаунты</title>
+  <title>Яндекс Аккаунты – temych_kb</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Покупка Яндекс аккаунтов и консультации по Яндекс рекламе. Быстро и удобно через Telegram.">
 
   <script src="https://telegram.org/js/telegram-web-app.js"></script>
 
@@ -59,9 +60,12 @@
     Подписаться на наш TG-канал
   </button>
 
+  <button class="btn" onclick="shareBot()">
+    Поделиться ботом
+  </button>
+
   <script>
     const tg = window.Telegram.WebApp;
-
     tg.ready();
     tg.expand();
 
@@ -72,6 +76,13 @@
 
     function openChannel() {
       tg.openTelegramLink('https://t.me/skidka_dir');
+    }
+
+    function shareBot() {
+      // готовый текст для пересылки бота
+      const shareText = "Рекомендую этот бот для покупки Яндекс аккаунтов и консультаций по рекламе: https://t.me/temych_kb";
+      const url = `https://t.me/share/url?url=${encodeURIComponent('https://t.me/temych_kb')}&text=${encodeURIComponent(shareText)}`;
+      tg.openTelegramLink(url);
     }
   </script>
 </body>
