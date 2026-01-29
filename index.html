@@ -80,13 +80,15 @@
       tg.openTelegramLink('https://t.me/skidka_dir');
     }
 
-    // Поделиться ботом с названием
+    // Поделиться ботом с текстом, где используется название бота и логин @
     function shareBot() {
       const botName = "Яндекс Аккаунты"; // название бота
-      const botLink = "https://t.me/yandeks_akkauntbot";
+      const botUsername = "@yandeks_akkauntbot"; // логин бота для упоминания
 
-      const shareText = `Рекомендую бота ${botName} по продаже аккаунтов Яндекс Директ: ${botLink}`;
-      const url = `https://t.me/share/url?url=${encodeURIComponent(botLink)}&text=${encodeURIComponent(shareText)}`;
+      const shareText = `Рекомендую бота ${botName} по продаже аккаунтов Яндекс Директ: ${botUsername}`;
+
+      // Ссылка для пересылки через Telegram share
+      const url = `https://t.me/share/url?url=&text=${encodeURIComponent(shareText)}`;
 
       tg.openTelegramLink(url);
     }
