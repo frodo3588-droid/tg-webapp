@@ -47,23 +47,31 @@
 <body>
   <h1>Выберите действие</h1>
 
-  <button class="btn"
-    onclick="openChat('Хочу купить аккаунты')">
+  <button class="btn" onclick="openChat('Хочу купить аккаунты')">
     Купить аккаунты
   </button>
 
-  <button class="btn"
-    onclick="openChat('Нужна консультация по Яндекс рекламе')">
+  <button class="btn" onclick="openChat('Нужна консультация по Яндекс рекламе')">
     Консультация по Яндекс рекламе
+  </button>
+
+  <button class="btn" onclick="openChannel()">
+    Подписаться на наш TG-канал
   </button>
 
   <script>
     const tg = window.Telegram.WebApp;
+
+    tg.ready();
     tg.expand();
 
     function openChat(text) {
       const url = `https://t.me/temych_kb?text=${encodeURIComponent(text)}`;
       tg.openTelegramLink(url);
+    }
+
+    function openChannel() {
+      tg.openTelegramLink('https://t.me/skidka_dir');
     }
   </script>
 </body>
