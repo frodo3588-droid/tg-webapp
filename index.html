@@ -2,7 +2,7 @@
 <html lang="ru">
 <head>
   <meta charset="UTF-8">
-  <title>Яндекс Аккаунты – temych_kb</title>
+  <title>Яндекс Аккаунты – @yandeks_akkauntbot</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Покупка Яндекс аккаунтов и консультации по Яндекс рекламе. Быстро и удобно через Telegram.">
 
@@ -71,7 +71,7 @@
 
     // Открытие чата с ботом
     function openChat(text) {
-      const url = `https://t.me/temych_kb?text=${encodeURIComponent(text)}`;
+      const url = `https://t.me/yandeks_akkauntbot?text=${encodeURIComponent(text)}`;
       tg.openTelegramLink(url);
     }
 
@@ -82,10 +82,10 @@
 
     // Поделиться ботом с названием
     function shareBot() {
-      const botName = "Яндекс Аккаунты – temych_kb";
-      const botLink = "https://t.me/temych_kb";
+      const botName = "Яндекс Аккаунты"; // название бота
+      const botLink = "https://t.me/yandeks_akkauntbot";
 
-      const shareText = `Рекомендую бот "${botName}": ${botLink}`;
+      const shareText = `Рекомендую бота ${botName} по продаже аккаунтов Яндекс Директ: ${botLink}`;
       const url = `https://t.me/share/url?url=${encodeURIComponent(botLink)}&text=${encodeURIComponent(shareText)}`;
 
       tg.openTelegramLink(url);
