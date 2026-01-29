@@ -69,19 +69,25 @@
     tg.ready();
     tg.expand();
 
+    // Открытие чата с ботом
     function openChat(text) {
       const url = `https://t.me/temych_kb?text=${encodeURIComponent(text)}`;
       tg.openTelegramLink(url);
     }
 
+    // Открытие канала
     function openChannel() {
       tg.openTelegramLink('https://t.me/skidka_dir');
     }
 
+    // Поделиться ботом с названием
     function shareBot() {
-      // готовый текст для пересылки бота
-      const shareText = "Рекомендую этот бот для покупки Яндекс аккаунтов и консультаций по рекламе: https://t.me/temych_kb";
-      const url = `https://t.me/share/url?url=${encodeURIComponent('https://t.me/temych_kb')}&text=${encodeURIComponent(shareText)}`;
+      const botName = "Яндекс Аккаунты – temych_kb";
+      const botLink = "https://t.me/temych_kb";
+
+      const shareText = `Рекомендую бот "${botName}": ${botLink}`;
+      const url = `https://t.me/share/url?url=${encodeURIComponent(botLink)}&text=${encodeURIComponent(shareText)}`;
+
       tg.openTelegramLink(url);
     }
   </script>
